@@ -1,0 +1,893 @@
+/* ============================================
+   Hospital Management System - Main Stylesheet
+   Theme: Blue & White | Fully Responsive
+   ============================================ */
+
+/* -------------------------------------------- */
+/* 1. CSS Variables & Reset */
+/* -------------------------------------------- */
+:root {
+    --primary-blue: #0a5c8e;
+    --primary-dark: #074268;
+    --primary-light: #e3f2fd;
+    --accent-blue: #2c7cb6;
+    --white: #ffffff;
+    --off-white: #f9fbfd;
+    --gray-light: #f1f5f9;
+    --gray: #64748b;
+    --gray-dark: #334155;
+    --dark: #0f172a;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.12);
+    --shadow-hover: 0 20px 35px rgba(10, 92, 142, 0.15);
+    --border-radius-sm: 12px;
+    --border-radius-md: 20px;
+    --border-radius-lg: 32px;
+    --border-radius-full: 9999px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--white);
+    color: var(--gray-dark);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* -------------------------------------------- */
+/* 2. Typography */
+/* -------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.highlight {
+    color: var(--primary-blue);
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 56px;
+}
+
+.subtitle {
+    color: var(--primary-blue);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.section-header h2 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+}
+
+.section-header p {
+    color: var(--gray);
+    font-size: 1.05rem;
+}
+
+/* -------------------------------------------- */
+/* 3. Top Emergency Bar (NEW & IMPROVED) */
+/* -------------------------------------------- */
+.top-emergency-bar {
+    background: var(--primary-dark);
+    color: var(--white);
+    padding: 10px 0;
+    font-size: 0.85rem;
+    position: relative;
+    z-index: 1001;
+}
+
+.emergency-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.emergency-contact {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.emergency-contact i {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+}
+
+.emergency-contact strong {
+    color: var(--white);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.separator {
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0 4px;
+}
+
+.hospital-hours {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hospital-hours i {
+    color: #4ade80;
+}
+
+/* -------------------------------------------- */
+/* 4. Navbar (with Login/Register buttons) */
+/* -------------------------------------------- */
+header {
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 16px 0;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    letter-spacing: -0.5px;
+}
+
+.logo h1 i {
+    color: var(--accent-blue);
+    margin-right: 8px;
+}
+
+.logo span {
+    font-size: 0.75rem;
+    color: var(--gray);
+    display: block;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-weight: 600;
+    color: var(--gray-dark);
+    font-size: 1rem;
+    padding-bottom: 4px;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-blue);
+}
+
+.nav-links a.active::after,
+.nav-links a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-blue);
+    border-radius: 2px;
+}
+
+/* Login & Register Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-login, .btn-register {
+    padding: 10px 24px;
+    border-radius: var(--border-radius-full);
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-login {
+    background: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+}
+
+.btn-login:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(10, 92, 142, 0.2);
+}
+
+.btn-register {
+    background: var(--primary-blue);
+    color: var(--white);
+    border: 2px solid var(--primary-blue);
+}
+
+.btn-register:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(10, 92, 142, 0.3);
+}
+
+/* -------------------------------------------- */
+/* 5. Hero Section */
+/* -------------------------------------------- */
+.hero {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--white) 100%);
+    padding: 60px 0 80px;
+    position: relative;
+}
+
+.hero-grid {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-badge {
+    background: rgba(10, 92, 142, 0.12);
+    color: var(--primary-blue);
+    padding: 6px 16px;
+    border-radius: var(--border-radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--gray);
+    margin-bottom: 32px;
+    max-width: 90%;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 14px 36px;
+    border-radius: var(--border-radius-full);
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(10, 92, 142, 0.25);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(10, 92, 142, 0.3);
+}
+
+.stats {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.stats div {
+    font-weight: 500;
+    color: var(--gray);
+}
+
+.stats span {
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+}
+
+.hero-image img {
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    height: auto;
+}
+
+/* -------------------------------------------- */
+/* 6. Services Section */
+/* -------------------------------------------- */
+.services {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--off-white);
+    padding: 32px 24px;
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    background: var(--white);
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow-hover);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* -------------------------------------------- */
+/* 7. Doctors Section */
+/* -------------------------------------------- */
+.doctors {
+    background: var(--off-white);
+    padding: 80px 0;
+}
+
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+}
+
+.doctor-card {
+    background: var(--white);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 28px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.doctor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+}
+
+.doc-img {
+    overflow: hidden;
+    background: var(--gray-light);
+}
+
+.doc-img img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.doctor-card:hover .doc-img img {
+    transform: scale(1.05);
+}
+
+.doctor-card h3 {
+    font-size: 1.25rem;
+    margin: 20px 0 4px;
+    font-weight: 700;
+}
+
+.specialty {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.doctor-card p {
+    padding: 0 20px;
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.social-icons a {
+    color: var(--gray);
+    font-size: 1rem;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-blue);
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* -------------------------------------------- */
+/* 8. Testimonial Section */
+/* -------------------------------------------- */
+.testimonial {
+    padding: 80px 0;
+    background: linear-gradient(120deg, var(--white), var(--primary-light));
+}
+
+.testimonial-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.testimonial-content {
+    flex: 1;
+}
+
+.quote-icon {
+    font-size: 3.5rem;
+    color: var(--primary-blue);
+    opacity: 0.2;
+    margin-bottom: 20px;
+}
+
+.testimonial-content h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.testimonial-content p {
+    font-size: 1.1rem;
+    color: var(--gray-dark);
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.patient-rating span {
+    font-weight: 600;
+    background: rgba(10, 92, 142, 0.1);
+    padding: 8px 18px;
+    border-radius: var(--border-radius-full);
+    display: inline-block;
+    color: var(--primary-blue);
+}
+
+.trust-badge {
+    margin-top: 28px;
+    font-weight: 500;
+    color: var(--primary-blue);
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.trust-badge i {
+    margin-right: 6px;
+    color: var(--primary-blue);
+}
+
+.testimonial-img {
+    flex: 1;
+}
+
+.testimonial-img img {
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    width: 100%;
+}
+
+/* -------------------------------------------- */
+/* 9. Footer */
+/* -------------------------------------------- */
+footer {
+    background: var(--dark);
+    color: #cbd5e1;
+    padding-top: 64px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col h3,
+.footer-col h4 {
+    color: var(--white);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer-col h3 i {
+    margin-right: 8px;
+    color: var(--primary-blue);
+}
+
+.footer-col p,
+.footer-col li {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col a {
+    color: #cbd5e1;
+    transition: all 0.2s ease;
+}
+
+.footer-col a:hover {
+    color: var(--primary-blue);
+    padding-left: 6px;
+}
+
+.footer-social {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social a {
+    background: rgba(255, 255, 255, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.footer-social a:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-3px);
+    padding-left: 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 28px 0;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+.footer-bottom i {
+    color: #ef4444;
+}
+
+/* -------------------------------------------- */
+/* 10. Responsive Design */
+/* -------------------------------------------- */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .nav-links {
+        gap: 24px;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        padding: 0 24px;
+    }
+    
+    .emergency-top {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .emergency-contact {
+        justify-content: center;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .nav-buttons {
+        justify-content: center;
+    }
+    
+    .hero-grid {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-content p {
+        max-width: 100%;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .stats {
+        justify-content: center;
+    }
+    
+    .hero-image {
+        margin-bottom: 20px;
+    }
+    
+    .testimonial-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .trust-badge {
+        justify-content: center;
+    }
+    
+    .footer-grid {
+        text-align: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero {
+        padding: 40px 0 60px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+    }
+    
+    .doctors-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 24px;
+    }
+    
+    .stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    
+    .stats div {
+        text-align: center;
+    }
+    
+    .testimonial-content h3 {
+        font-size: 1.6rem;
+    }
+    
+    .testimonial-content p {
+        font-size: 1rem;
+    }
+    
+    .trust-badge {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .nav-links {
+        gap: 14px;
+    }
+    
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-badge {
+        font-size: 0.7rem;
+    }
+    
+    .btn-primary {
+        padding: 12px 24px;
+        font-size: 0.85rem;
+    }
+    
+    .btn-login, .btn-register {
+        padding: 8px 18px;
+        font-size: 0.75rem;
+    }
+    
+    .stats span {
+        font-size: 1.4rem;
+    }
+    
+    .doctor-card .doc-img img {
+        height: 220px;
+    }
+    
+    .service-card {
+        padding: 24px 16px;
+    }
+    
+    .service-card i {
+        font-size: 2.5rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-primary {
+        justify-content: center;
+    }
+    
+    .nav-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-login, .btn-register {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .stats {
+        gap: 12px;
+    }
+}
