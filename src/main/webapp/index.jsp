@@ -8,50 +8,13 @@
     <!-- Google Fonts & Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="CSS/global.css">
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
 
-    <!-- ==================== TOP EMERGENCY BAR ==================== -->
-    <div class="top-emergency-bar">
-        <div class="container emergency-top">
-            <div class="emergency-contact">
-                <i class="fas fa-phone-alt"></i>
-                <span>24/7 Emergency Service:</span>
-                <strong>+977 1-1234567</strong>
-                <span class="separator">|</span>
-                <i class="fas fa-ambulance"></i>
-                <span>Ambulance: 102</span>
-            </div>
-            <div class="hospital-hours">
-                <i class="fas fa-clock"></i>
-                <span>Open 24 Hours | 7 Days a Week</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- ==================== NAVBAR ==================== -->
-    <header>
-        <div class="container nav-container">
-            <div class="logo">
-                <h1><i class="fas fa-hospital-user"></i> MediLife</h1>
-                <span>Hospital & Research Center</span>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="${pageContext.request.contextPath}/" class="active">Home</a></li>
-                    <li><a href="${pageContext.request.contextPath}/doctors">Doctors</a></li>
-                    <li><a href="${pageContext.request.contextPath}/about">About Us</a></li>
-                    <li><a href="${pageContext.request.contextPath}/blog">Blog</a></li>
-                    <li><a href="${pageContext.request.contextPath}/contact">Contact Us</a></li>
-                </ul>
-            </nav>
-            <div class="nav-buttons">
-                <a href="${pageContext.request.contextPath}/login" class="btn-login"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
-                <a href="${pageContext.request.contextPath}/register" class="btn-register"><i class="fas fa-user-plus"></i> REGISTER</a>
-            </div>
-        </div>
-    </header>
+    <!-- Include Header Component -->
+    <jsp:include page="components/header.jsp" />
 
     <!-- ==================== HERO SECTION ==================== -->
     <section class="hero">
@@ -61,7 +24,7 @@
                 <h1>A Brighter <span class="highlight">Healthcare</span> Experience</h1>
                 <p>Providing compassionate, world-class medical care with advanced technology and a patient-first approach. Your health is our priority, 24/7.</p>
                 <div class="hero-buttons">
-                    <a href="${pageContext.request.contextPath}/login" class="btn-primary">BOOK APPOINTMENT <i class="fas fa-calendar-check"></i></a>
+                    <a href="${pageContext.request.contextPath}/login.jsp" class="btn-primary">BOOK APPOINTMENT <i class="fas fa-calendar-check"></i></a>
                 </div>
                 <div class="stats">
                     <div><span>25+</span> Years of Excellence</div>
@@ -107,9 +70,9 @@
             <div class="doctors-grid">
                 <div class="doctor-card">
                     <div class="doc-img">
-                        <img src="${pageContext.request.contextPath}/Public/Doctors/ShreyaPokharel.jpg" alt="Dr. Shreya Pokharel" onerror="this.src='https://placehold.co/400x400/e3f2fd/0a5c8e?text=Dr.+Shreya'">
+                        <img src="Public/Doctors/SabinPant.jpg" alt="Dr. Sabin Pant" onerror="this.src='https://placehold.co/400x400/e3f2fd/0a5c8e?text=Dr.+Sabin'">
                     </div>
-                    <h3>Dr. Shreya Pokharel</h3>
+                    <h3>Dr. Sabin Pant</h3>
                     <span class="specialty">Chief Cardiologist</span>
                     <p>15+ years experience in interventional cardiology, heart failure, and preventive cardiac care.</p>
                     <div class="social-icons">
@@ -120,7 +83,7 @@
                 </div>
                 <div class="doctor-card">
                     <div class="doc-img">
-                        <img src="${pageContext.request.contextPath}/Public/Doctors/PriyanshuMahat.jpg" alt="Dr. Priyanshu Mahat" onerror="this.src='https://placehold.co/400x400/e3f2fd/0a5c8e?text=Dr.+Priyanshu'">
+                        <img src="Public/Doctors/PriyanshuMahat.jpeg" alt="Dr. Priyanshu Mahat" onerror="this.src='https://placehold.co/400x400/e3f2fd/0a5c8e?text=Dr.+Priyanshu'">
                     </div>
                     <h3>Dr. Priyanshu Mahat</h3>
                     <span class="specialty">Senior Neurologist</span>
@@ -133,7 +96,7 @@
                 </div>
                 <div class="doctor-card">
                     <div class="doc-img">
-                        <img src="${pageContext.request.contextPath}/Public/Doctors/AryanShakya.jpg" alt="Dr. Aryan Shakya" onerror="this.src='https://placehold.co/400x400/e3f2fd/0a5c8e?text=Dr.+Aryan'">
+                        <img src="Public/Doctors/AryanShakya.jpeg" alt="Dr. Aryan Shakya" onerror="this.src='https://placehold.co/400x400/e3f2fd/0a5c8e?text=Dr.+Aryan'">
                     </div>
                     <h3>Dr. Aryan Shakya</h3>
                     <span class="specialty">Orthopedic Surgeon</span>
@@ -146,7 +109,7 @@
                 </div>
                 <div class="doctor-card">
                     <div class="doc-img">
-                        <img src="${pageContext.request.contextPath}/Public/Doctors/RabinPant.jpg" alt="Dr. Rabin Pant" onerror="this.src='https://placehold.co/400x400/e3f2fd/0a5c8e?text=Dr.+Rabin'">
+                        <img src="Public/Doctors/RabinPant.jpeg" alt="Dr. Rabin Pant" onerror="this.src='https://placehold.co/400x400/e3f2fd/0a5c8e?text=Dr.+Rabin'">
                     </div>
                     <h3>Dr. Rabin Pant</h3>
                     <span class="specialty">Pediatrician</span>
@@ -159,9 +122,9 @@
                 </div>
                 <div class="doctor-card">
                     <div class="doc-img">
-                        <img src="${pageContext.request.contextPath}/Public/Doctors/SabinPant.jpg" alt="Dr. Sabin Pant" onerror="this.src='https://placehold.co/400x400/e3f2fd/0a5c8e?text=Dr.+Sabin'">
+                        <img src="Public/Doctors/ShreyaPokharel.jpg" alt="Dr. Shreya Pokharel" onerror="this.src='https://placehold.co/400x400/e3f2fd/0a5c8e?text=Dr.+Shreya'">
                     </div>
-                    <h3>Dr. Sabin Pant</h3>
+                    <h3>Dr. Shreya Pokharel</h3>
                     <span class="specialty">Dentist & Maxillofacial Surgeon</span>
                     <p>Specialist in cosmetic dentistry, dental implants, root canal, and oral surgeries.</p>
                     <div class="social-icons">
@@ -196,54 +159,8 @@
         </div>
     </section>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <h3><i class="fas fa-hospital-user"></i> MediLife</h3>
-                <p>Delivering compassionate, cutting-edge healthcare since 1998. We treat every patient like family with personalized care and advanced medical technology.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="${pageContext.request.contextPath}/">Home</a></li>
-                    <li><a href="${pageContext.request.contextPath}/doctors">Doctors</a></li>
-                    <li><a href="${pageContext.request.contextPath}/about">About Us</a></li>
-                    <li><a href="${pageContext.request.contextPath}/blog">Blog</a></li>
-                    <li><a href="${pageContext.request.contextPath}/contact">Contact Us</a></li>
-                    <li><a href="${pageContext.request.contextPath}/login">Login / Register</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Our Services</h4>
-                <ul>
-                    <li>Emergency & Trauma Care</li>
-                    <li>OPD & IPD Services</li>
-                    <li>Advanced Diagnostics</li>
-                    <li>Maternity & Childcare</li>
-                    <li>Specialized Surgeries</li>
-                    <li>24/7 Pharmacy</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact Info</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p>
-                <p><i class="fas fa-phone"></i> +977 1-1234567</p>
-                <p><i class="fas fa-envelope"></i> info@medilife.com.np</p>
-                <p><i class="fas fa-clock"></i> 24/7 Emergency Service</p>
-                <p><i class="fas fa-ambulance"></i> Ambulance: 102</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 MediLife Hospital Management System. All rights reserved. | Designed with <i class="fas fa-heart"></i> for better healthcare.</p>
-        </div>
-    </footer>
+    <!-- Include Footer Component -->
+    <jsp:include page="components/footer.jsp" />
 
 </body>
 </html>

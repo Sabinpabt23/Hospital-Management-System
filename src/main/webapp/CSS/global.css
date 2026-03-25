@@ -1,0 +1,469 @@
+/* ============================================
+   Global Styles - Shared Across All Pages
+   Theme: Blue & White | Fully Responsive
+   ============================================ */
+
+/* -------------------------------------------- */
+/* 1. CSS Variables & Reset */
+/* -------------------------------------------- */
+:root {
+    --primary-blue: #0a5c8e;
+    --primary-dark: #074268;
+    --primary-light: #e3f2fd;
+    --accent-blue: #2c7cb6;
+    --white: #ffffff;
+    --off-white: #f9fbfd;
+    --gray-light: #f1f5f9;
+    --gray: #64748b;
+    --gray-dark: #334155;
+    --dark: #0f172a;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.12);
+    --shadow-hover: 0 20px 35px rgba(10, 92, 142, 0.15);
+    --border-radius-sm: 12px;
+    --border-radius-md: 20px;
+    --border-radius-lg: 32px;
+    --border-radius-full: 9999px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--white);
+    color: var(--gray-dark);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* -------------------------------------------- */
+/* 2. Typography */
+/* -------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.highlight {
+    color: var(--primary-blue);
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 56px;
+}
+
+.subtitle {
+    color: var(--primary-blue);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.section-header h2 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+}
+
+.section-header p {
+    color: var(--gray);
+    font-size: 1.05rem;
+}
+
+/* -------------------------------------------- */
+/* 3. Top Emergency Bar */
+/* -------------------------------------------- */
+.top-emergency-bar {
+    background: var(--primary-dark);
+    color: var(--white);
+    padding: 10px 0;
+    font-size: 0.85rem;
+    position: relative;
+    z-index: 1001;
+}
+
+.emergency-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.emergency-contact {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.emergency-contact i {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+}
+
+.emergency-contact strong {
+    color: var(--white);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.separator {
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0 4px;
+}
+
+.hospital-hours {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hospital-hours i {
+    color: #4ade80;
+}
+
+/* -------------------------------------------- */
+/* 4. Navbar */
+/* -------------------------------------------- */
+header {
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 16px 0;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    letter-spacing: -0.5px;
+}
+
+.logo h1 i {
+    color: var(--accent-blue);
+    margin-right: 8px;
+}
+
+.logo span {
+    font-size: 0.75rem;
+    color: var(--gray);
+    display: block;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-weight: 600;
+    color: var(--gray-dark);
+    font-size: 1rem;
+    padding-bottom: 4px;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-blue);
+}
+
+.nav-links a.active::after,
+.nav-links a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-blue);
+    border-radius: 2px;
+}
+
+/* Login & Register & Logout Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.welcome-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--primary-blue);
+}
+
+.btn-login, .btn-register, .btn-logout {
+    padding: 10px 24px;
+    border-radius: var(--border-radius-full);
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-login {
+    background: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+}
+
+.btn-login:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(10, 92, 142, 0.2);
+}
+
+.btn-register {
+    background: var(--primary-blue);
+    color: var(--white);
+    border: 2px solid var(--primary-blue);
+}
+
+.btn-register:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(10, 92, 142, 0.3);
+}
+
+.btn-logout {
+    background: transparent;
+    color: #dc2626;
+    border: 2px solid #dc2626;
+}
+
+.btn-logout:hover {
+    background: #dc2626;
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+}
+
+/* -------------------------------------------- */
+/* 5. Footer */
+/* -------------------------------------------- */
+footer {
+    background: var(--dark);
+    color: #cbd5e1;
+    padding-top: 64px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col h3,
+.footer-col h4 {
+    color: var(--white);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer-col h3 i {
+    margin-right: 8px;
+    color: var(--primary-blue);
+}
+
+.footer-col p,
+.footer-col li {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col a {
+    color: #cbd5e1;
+    transition: all 0.2s ease;
+}
+
+.footer-col a:hover {
+    color: var(--primary-blue);
+    padding-left: 6px;
+}
+
+.footer-social {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social a {
+    background: rgba(255, 255, 255, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.footer-social a:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-3px);
+    padding-left: 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 28px 0;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+.footer-bottom i {
+    color: #ef4444;
+}
+
+/* -------------------------------------------- */
+/* 6. Responsive Design */
+/* -------------------------------------------- */
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 24px;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        padding: 0 24px;
+    }
+    
+    .emergency-top {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .emergency-contact {
+        justify-content: center;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .nav-buttons {
+        justify-content: center;
+    }
+    
+    .footer-grid {
+        text-align: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .nav-links {
+        gap: 14px;
+    }
+    
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+    
+    .btn-login, .btn-register, .btn-logout {
+        padding: 8px 18px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .nav-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-login, .btn-register, .btn-logout {
+        justify-content: center;
+        width: 100%;
+    }
+}
